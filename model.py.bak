@@ -21,6 +21,7 @@ data_augmentation = keras.Sequential(
         layers.RandomZoom(.5, .2)
     ]
 )
+data_augmentation.layers[0].adapt(train_X)
 
 class LocationEncoding(tf.keras.layers.Layer):
   def __init__(self, filters1, filters2):
